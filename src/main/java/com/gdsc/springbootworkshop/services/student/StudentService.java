@@ -35,6 +35,7 @@ public class StudentService implements IStudentService , ICrudService<Student,Lo
             toUpdateStudent.setLastName(student.getLastName());
             toUpdateStudent.setEmail(student.getEmail());
             toUpdateStudent.setGender(student.getGender());
+            toUpdateStudent.setClassroom(student.getClassroom());
             return studentRepository.save(toUpdateStudent);
         }
         return null;
