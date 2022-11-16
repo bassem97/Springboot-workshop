@@ -1,9 +1,17 @@
 package com.gdsc.springbootworkshop.entites;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
 public class Student {
 
 
@@ -18,17 +26,6 @@ public class Student {
 
     @Enumerated(EnumType.STRING)
     private GENDER gender;
-
-    public Long getId() {
-        return idStudent;
-    }
-
-    public void setId(Long id) {
-        this.idStudent = id;
-    }
-
-    public Student() {
-    }
 
     public Student(String firstName, String lastName, String email, GENDER gender) {
         this.firstName = firstName;
