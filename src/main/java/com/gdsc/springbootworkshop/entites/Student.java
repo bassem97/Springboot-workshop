@@ -1,14 +1,11 @@
 package com.gdsc.springbootworkshop.entites;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 
 @Entity
 public class Student {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,11 +20,11 @@ public class Student {
     private GENDER gender;
 
     public Long getId() {
-        return id;
+        return idStudent;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idStudent = id;
     }
 
     public Student() {
