@@ -6,6 +6,9 @@ import javax.persistence.*;
 
 @Entity
 public class Student {
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,6 +21,14 @@ public class Student {
 
     @Enumerated(EnumType.STRING)
     private GENDER gender;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Student() {
     }
