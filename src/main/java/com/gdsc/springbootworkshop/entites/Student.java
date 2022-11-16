@@ -1,6 +1,7 @@
 package com.gdsc.springbootworkshop.entites;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,11 @@ public class Student {
 
     @Enumerated(EnumType.STRING)
     private GENDER gender;
+
+    @ManyToOne()
+    @JoinColumn(name = "idClassroom")
+    @JsonIgnoreProperties({"students"})
+    private Classroom classroom;
 
     public Student(String firstName, String lastName, String email, GENDER gender) {
         this.firstName = firstName;
