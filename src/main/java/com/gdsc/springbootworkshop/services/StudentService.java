@@ -27,7 +27,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student updateStudent(Long id, Student student) {
-        if(studentRepository.findById(id).isPresent() ){
+        if(studentRepository.findById(id).isPresent()){
             Student toUpdateStudent = studentRepository.findById(id).get();
             toUpdateStudent.setFirstName(student.getFirstName());
             toUpdateStudent.setLastName(student.getLastName());
