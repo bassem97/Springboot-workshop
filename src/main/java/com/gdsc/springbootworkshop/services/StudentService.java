@@ -27,16 +27,24 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student updateStudent(Long id, Student student) {
+        if(studentRepository.findById(id).isPresent() ){
+            Student toUpdateStudent = studentRepository.findById(id).get();
+            toUpdateStudent.setFirstName(student.getFirstName());
+            toUpdateStudent.setLastName(student.getLastName());
+            toUpdateStudent.setEmail(student.getEmail());
+            toUpdateStudent.setGender(student.getGender());
+            return studentRepository.save(toUpdateStudent);
+        }
         return null;
     }
 
     @Override
     public void deleteStudent(Long id) {
-
+        studentRepository.deleteById(id);
     }
 
     @Override
     public Student findById(Long id) {
-        return null;
+        return studentRepository.findById(id).get();
     }
 }
